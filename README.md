@@ -1,7 +1,7 @@
 # 🚀 DSA – LeetCode Progress
 
 ![LeetCode](https://img.shields.io/badge/LeetCode-Progress-orange?style=for-the-badge&logo=leetcode)  
-![Language](https://img.shields.io/badge/Language-C++%20|%20Java%20|%20Python-blue?style=for-the-badge)  
+![Language](https://img.shields.io/badge/Language-%20Java%20|%20Python-blue?style=for-the-badge)  
 
 ---
 
@@ -17,7 +17,7 @@ Everything below updates **automatically every day** ⚡.
 
 - **Streak & Heatmap:**  
   <p align="center">
-    <img src="https://leetcard.jacoblin.cool/yoUtkarsh_Chauhann?theme=dark&font=JetBrains%20Mono&ext=heatmap" />
+    <img src="https://leetcard.jacoblin.cool/Utkarsh_Chauhann?theme=dark&font=JetBrains%20Mono&ext=heatmap" />
   </p>
 
 ---
