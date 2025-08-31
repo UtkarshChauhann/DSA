@@ -11,13 +11,11 @@ Everything below updates **automatically every day** ⚡.
 
 ---
 
-## 📈 Stats & Progress
-- **LeetCode Stats:**  
-  ![LeetCode Stats](https://leetcard.jacoblin.cool/Utkarsh_Chauhann?theme=light&font=JetBrains%20Mono&ext=contest)
+## 📈 Stats & Progress 
 
-- **Streak & Heatmap:**  
+- **LeetCode Stats & Heatmap:**  
   <p align="center">
-    <img src="https://leetcard.jacoblin.cool/Utkarsh_Chauhann?theme=dark&font=JetBrains%20Mono&ext=heatmap" />
+    <img src="https://leetcard.jacoblin.cool/Utkarsh_Chauhann?theme=light&font=JetBrains%20Mono&ext=heatmap" />
   </p>
 
 ---
