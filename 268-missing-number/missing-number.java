@@ -4,10 +4,10 @@ class Solution {
         
         int n = nums.length;
 
-        for(int i=0; i<n-1; i++){
-            if(nums[i]+1 != nums[i+1]) return i+1;
+        for(int i=0; i<n; i++){
+            if(nums[i] != i) return i;
         }
-        if(nums[0] != 0) return 0;
+        
         return n;
     }
 }
