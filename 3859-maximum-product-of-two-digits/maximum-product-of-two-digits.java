@@ -15,10 +15,6 @@ class Solution {
                 mx2 = digit;
             }
             n /= 10;
-            if(n%10 == mx1){
-                mx2 = mx1;
-
-            }
         }
 
         if(freq[mx1] >=2) return mx1*mx1;
