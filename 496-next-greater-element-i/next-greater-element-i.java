@@ -16,6 +16,7 @@ class Solution {
         }
 
         int i = 0;
+        
         for(int num : nums1) {
             ans[i++] = map.getOrDefault(num, -1);
         }
