@@ -1,26 +1,23 @@
 class Solution {
-   public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-        int[] ans = new int[nums1.length];
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int[] arr = new int[nums1.length];
 
-        Stack<Integer> stack = new Stack<>();
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Stack<Integer> st = new Stack<>();
+        HashMap<Integer, Integer> hm = new HashMap<>();
 
-        // find out all the next greater elements in nums2 array
-        for(int num: nums2) {
-            // if num is greater than top elements in stack then it is the next greater element in nums2
-            while(!stack.isEmpty() && num > stack.peek()) {
-                map.put(stack.pop(), num);
+        for(int num: nums2){
+            while(!st.isEmpty() && num > st.peek()){
+                hm.put(st.pop(), num);
             }
-            // then add num to stack
-            stack.add(num);
+            st.add(num);
         }
 
-        int i = 0;
-        
-        for(int num : nums1) {
-            ans[i++] = map.getOrDefault(num, -1);
+        int idx = 0;
+
+        for(int num: nums1){
+            arr[idx++] = hm.getOrDefault(num, -1);
         }
 
-        return ans;
+        return arr;
     }
 }
