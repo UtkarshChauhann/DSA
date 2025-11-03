@@ -7,8 +7,7 @@ class Solution {
             else if(i%3==0) l.add("Fizz");
             else if(i%5==0) l.add("Buzz");
             else{
-                String s = "" + i;
-                l.add(s);
+                l.add(String.valueOf(i));
             }
         }
 
