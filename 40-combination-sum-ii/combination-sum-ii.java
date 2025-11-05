@@ -6,16 +6,14 @@ class Solution {
         }
         if(i == candidates.length || target < 0) return;
 
-        temp.add(candidates[i]);
-        func(i+1, target-candidates[i], candidates, temp, ans);
+       
+          for(int j=i; j<candidates.length; j++){
+            if(j > i && candidates[j] == candidates[j-1]) continue;
 
-        temp.remove(temp.size() - 1);
-
-        for(int j=i+1; j<candidates.length; j++){
-            if(candidates[j] != candidates[i]){
-                func(j, target, candidates, temp, ans);
-                break;
-            }
+            temp.add(candidates[j]);
+            func(j+1, target-candidates[j], candidates, temp, ans);
+            temp.remove(temp.size() - 1);
+            
         }
         
     }
