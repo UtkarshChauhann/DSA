@@ -1,14 +1,13 @@
 class Solution {
-    private boolean prime(int num, int n){
-        if(num <= 1) return false;
-        
-        if(n > Math.sqrt(num)){
-            return true;
-        }
-        if(num % n == 0) return false;
+    private boolean isPrime(int num) {
+        if (num <= 1) return false;
 
-        return prime(num, n+1);
-    }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+}
+
     public boolean checkPrimeFrequency(int[] nums) {
         HashMap<Integer, Integer> hm = new HashMap<>();
         
@@ -17,7 +16,7 @@ class Solution {
         }
 
         for(int num: hm.values()){
-            if(prime(num, 2)) return true;
+            if(isPrime(num)) return true;
         }
 
         return false;
