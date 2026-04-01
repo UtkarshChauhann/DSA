@@ -5,7 +5,7 @@ class Solution {
         Set<Integer> s = new HashSet<>();
 
         for(int right=0; right<nums.length; right++){
-            while(s.contains(nums[right]) || s.size() == k){
+            while(s.contains(nums[right])){
                 s.remove(nums[left]);
                 sum -= nums[left];
                 left++;
@@ -16,6 +16,9 @@ class Solution {
 
             if(s.size() == k){
                 ans = Math.max(ans, sum);
+                s.remove(nums[left]);
+                sum -= nums[left];
+                left++;
             }
         }
 
