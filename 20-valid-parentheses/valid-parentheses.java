@@ -4,26 +4,20 @@ class Solution {
         if(n%2 == 1) return false;
 
         Stack<Character> st = new Stack<>();
-        
-        for(int i=0; i<n; i++){
-            char ch = s.charAt(i);
-            if(ch == '(' || ch == '[' || ch == '{') st.push(ch);
-            else{
-                if(st.size() == 0) return false;
 
-                char top = st.peek();   
-                if(sameStyle(top, ch)) st.pop();
-                else return false;
+        for(char c: s.toCharArray()){
+            if(c == '('){
+                st.push(')');
+            } else if(c == '{'){
+                st.push('}');
+            } else if(c == '['){
+                st.push(']');
             }
+            else if(st.isEmpty() || st.pop() != c) return false;
         }
 
-        return (st.size() == 0);
-    }
+        if(!st.isEmpty()) return false;
 
-    private boolean sameStyle(char a, char b){
-        if(a == '(' && b ==')') return true;
-        if(a == '[' && b ==']') return true;
-        if(a == '{' && b =='}') return true;
-        return false;
+        return true;
     }
 }
