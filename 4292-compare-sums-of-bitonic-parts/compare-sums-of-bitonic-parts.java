@@ -4,9 +4,9 @@ class Solution {
         long leftSum = nums[0], rightSum = nums[n-1];
 
         for(int i=1; i<n; i++){
-            if(nums[i-1] < nums[i]) leftSum += nums[i];
+            if(nums[i-1] < nums[i]) leftSum += nums[i]; //0 -> peak
 
-            else if(nums[i-1] > nums[i]) rightSum += nums[i-1];
+            else if(nums[i-1] > nums[i]) rightSum += nums[i-1]; // peak -> n-1
         }
 
         if(leftSum > rightSum) return 0;
