@@ -1,14 +1,15 @@
 class Solution {
-    private boolean prime(int num, int x){
-        if(x > Math.sqrt(num)) return true;
+    private boolean isPrime(int x){
+        if(x < 2) return false;
 
-        if(num % x == 0) return false;
+        for(int i=2; i*i<=x; i++){
+            if(x % i == 0) return false; 
+        }
 
-        return prime(num, x+1);
+        return true;
     }
     public int sumOfPrimesInRange(int n) {
-        if(n < 2) return 0;
-        
+
         int a = n;
         int r = 0;
 
@@ -23,9 +24,8 @@ class Solution {
         int ans = 0;
 
         while(min <= max){
-            if(min == 1) min++;
 
-            if(prime(min, 2)) ans += min;
+            if(isPrime(min)) ans += min;
 
             min++;
         }
