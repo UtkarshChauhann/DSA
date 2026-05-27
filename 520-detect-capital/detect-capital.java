@@ -3,24 +3,12 @@ class Solution {
         if(word.equals(word.toUpperCase())) return true;
         if(word.equals(word.toLowerCase())) return true;
 
-        char a = word.charAt(0);
+        String first = word.substring(0,1);
+        String rest = word.substring(1);
 
-        if(Character.isUpperCase(a)){
+        if(first.equals(first.toUpperCase()) && rest.equals(rest.toLowerCase())) return true;
 
-            for(int i=1; i<word.length(); i++){
-                char ch = word.charAt(i);
-                if(Character.isUpperCase(ch)) return false;
-            }
-        }
-        if(Character.isLowerCase(a)){
-
-            for(int i=1; i<word.length(); i++){
-                char ch = word.charAt(i);
-                if(Character.isUpperCase(ch)) return false;
-            }
-        }
         
-
-        return true;
+        return false;
     }
 }
