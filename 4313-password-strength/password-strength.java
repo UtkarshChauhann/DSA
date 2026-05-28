@@ -1,25 +1,24 @@
 class Solution {
     public int passwordStrength(String password) {
 
-        Set<Character> seen = new HashSet<>();
+        boolean[] seen = new boolean[128];
         int strength = 0;
 
         for (char ch : password.toCharArray()) {
 
-            // count each character only once
-            if (seen.contains(ch)) {
+            if (seen[ch]) {
                 continue;
             }
 
-            seen.add(ch);
+            seen[ch] = true;
 
-            if (Character.isLowerCase(ch)) {
+            if (ch >= 'a' && ch <= 'z') {
                 strength += 1;
             }
-            else if (Character.isUpperCase(ch)) {
+            else if (ch >= 'A' && ch <= 'Z') {
                 strength += 2;
             }
-            else if (Character.isDigit(ch)) {
+            else if (ch >= '0' && ch <= '9') {
                 strength += 3;
             }
             else { // ! @ # $
