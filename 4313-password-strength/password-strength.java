@@ -1,30 +1,32 @@
 class Solution {
     public int passwordStrength(String password) {
 
-        Set<Character> s = new HashSet<>();
-
-        int ans = 0;
+        Set<Character> seen = new HashSet<>();
+        int strength = 0;
 
         for (char ch : password.toCharArray()) {
 
-            if (Character.isLowerCase(ch) && !s.contains(ch)) {
-                s.add(ch);
-                ans += 1;
+            // count each character only once
+            if (seen.contains(ch)) {
+                continue;
             }
-            else if (Character.isUpperCase(ch) && !s.contains(ch)) {
-                s.add(ch);
-                ans += 2;
+
+            seen.add(ch);
+
+            if (Character.isLowerCase(ch)) {
+                strength += 1;
             }
-            else if (Character.isDigit(ch) && !s.contains(ch)) {
-                s.add(ch);
-                ans += 3;
+            else if (Character.isUpperCase(ch)) {
+                strength += 2;
             }
-            else if ((ch == '!' || ch == '@' || ch == '#' || ch == '$') && !s.contains(ch)) {
-                s.add(ch);
-                ans += 5;
+            else if (Character.isDigit(ch)) {
+                strength += 3;
+            }
+            else { // ! @ # $
+                strength += 5;
             }
         }
 
-        return ans;
+        return strength;
     }
 }
