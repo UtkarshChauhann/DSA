@@ -5,10 +5,11 @@ class Solution {
         int ans = -1;
 
         for(int j=1; j<n; j++){
-            leftMin = Math.min(leftMin, nums[j-1]);
             if(nums[j] > leftMin){
                 ans = Math.max(ans, nums[j] - leftMin);
             }
+
+            leftMin = Math.min(leftMin, nums[j]);
         }
 
         return ans;
