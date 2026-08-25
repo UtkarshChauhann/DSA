@@ -6,12 +6,12 @@ class Solution {
             s.add(x);
         }
 
-        for(int i=1; i<200; i++){
-            int a = k*i;
+        int i = k;
 
-            if(!s.contains(a)) return a;
+        while(s.contains(i)){
+            i += k;
         }
 
-        return 1;
+        return i;
     }
 }
