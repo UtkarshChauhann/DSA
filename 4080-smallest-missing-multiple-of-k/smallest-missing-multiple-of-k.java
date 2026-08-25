@@ -1,17 +1,18 @@
 class Solution {
+
     public int missingMultiple(int[] nums, int k) {
-        Set<Integer> s = new HashSet<>();
+        boolean[] contains = new boolean[201];
 
-        for(int x: nums){
-            s.add(x);
+        for (int ele : nums) {
+            contains[ele] = true;
         }
 
-        int i = k;
+        int ans = k;
 
-        while(s.contains(i)){
-            i += k;
+        while (contains[ans]) {
+            ans += k;
         }
 
-        return i;
+        return ans;
     }
 }
